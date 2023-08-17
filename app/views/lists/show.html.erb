@@ -1,0 +1,17 @@
+<h1><%= @list.name %></h1>
+
+<div class="d-flex flex-row justify-content-evenly">
+<% @list.bookmarks.each do |bookmark| %>
+<div class="card" style="width: 18rem;">
+  <img src="<%= bookmark.movie.poster_url%>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"> <%= bookmark.comment%></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+     <%= button_to "Destroy this restaurant", @bookmark, method: :delete ,data: { turbo_method: :delete, turbo_confirm: 'Are you sure ?' }%>
+  </div>
+</div>
+  <% end %>
+
+</div>
+<p><%= link_to "Go back to list", lists_path %></p>
+<p><%= link_to "add a new bookmark", new_list_bookmark_path(@list) %></p>

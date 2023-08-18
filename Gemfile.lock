@@ -147,6 +147,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-linux)
+      racc (~> 1.4)
     pg (1.5.3)
     popper_js (2.11.8)
     puma (5.6.6)
@@ -257,6 +259,7 @@ GEM
 PLATFORMS
   arm64-darwin-22
   unknown
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails

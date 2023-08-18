@@ -4,15 +4,18 @@
     <p>Classic</p>
   </div>
 </div>
-<div class="cards">
-<% @lists.each do |l| %>
+<div class="container">
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    <p><%= link_to l.name, list_path(l) %></p>
-  </div>
+    <% @lists.each do |l| %>
 
-
-
-<% end %>
+        <div class="card-white" >
+            <% if l.photo.attached? %>
+          <%= cl_image_tag l.photo.key, height: 75, width: 100, crop: :fill %>
+          <% else  %>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png" alt="">
+          <% end %>
+              <p><%= link_to l.name, list_path(l), class:"btn-done" %></p>
+        </div>
+    <% end %>
 </div>
 </ul><%= link_to "Add a new list", new_list_path  %>
